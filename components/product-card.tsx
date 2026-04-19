@@ -42,8 +42,8 @@ export function ProductCard({ product, showPriceBreakdown = false }: ProductCard
 
   return (
     <Link href={`/product/${product.id}`}>
-      <Card className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group cursor-pointer bg-white h-full">
-      <div className="relative h-64 w-full bg-[#f8f5f0] overflow-hidden">
+      <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer bg-white h-full border-cream-deep hover:border-gold/30 hover:-translate-y-1">
+      <div className="relative h-64 w-full bg-gradient-to-br from-cream to-cream-deep overflow-hidden">
         {product.images && product.images.length > 0 ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -57,7 +57,7 @@ export function ProductCard({ product, showPriceBreakdown = false }: ProductCard
           </div>
         )}
         {product.featured && (
-          <Badge className="absolute top-3 right-3 bg-[#C5A059] hover:bg-[#b08e4d]">Featured</Badge>
+          <Badge className="absolute top-3 right-3 bg-gold hover:bg-gold-dark text-richblack font-semibold tracking-wider text-xs">Featured</Badge>
         )}
       </div>
       <CardContent className="p-5">
@@ -72,9 +72,9 @@ export function ProductCard({ product, showPriceBreakdown = false }: ProductCard
           </div>
         </div>
 
-        <div className="mt-4 pt-4 border-t border-gray-100 flex justify-between items-end">
+        <div className="mt-4 pt-4 border-t border-cream-deep flex justify-between items-end">
           <div>
-            <p className="text-xs text-gray-500 font-medium mb-0.5">
+            <p className="text-xs text-richblack-muted font-medium mb-0.5">
               {showPriceBreakdown ? 'Dynamic Price' : 'Starting from'}
             </p>
             <motion.p
@@ -82,13 +82,13 @@ export function ProductCard({ product, showPriceBreakdown = false }: ProductCard
               initial={isAnimating ? { opacity: 0 } : { opacity: 1 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.3 }}
-              className="font-bold text-[#C5A059] text-xl tracking-tight"
+              className="font-bold text-gold text-xl tracking-tight"
             >
               {currentPrice > 0 ? formatPrice(currentPrice) : 'Price on Request'}
             </motion.p>
           </div>
           {product.weight && (
-            <p className="text-sm text-gray-500 font-medium">{product.weight}g</p>
+            <p className="text-sm text-richblack-muted font-medium">{product.weight}g</p>
           )}
         </div>
       </CardContent>

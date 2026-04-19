@@ -7,7 +7,6 @@ import { useCart } from '@/lib/cart-context';
 import { useAuth } from '@/lib/auth-context';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Trash2, ShoppingBag, Plus, Minus, Lock } from 'lucide-react';
 import { formatPrice } from '@/lib/pricing';
 
