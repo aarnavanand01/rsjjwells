@@ -33,8 +33,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${montserrat.variable}`}>
-      <body>
+    <html lang="en" className={`${playfair.variable} ${montserrat.variable} bg-background`}>
+      <body className="min-h-screen antialiased">
         <AuthProvider>
           <CartProvider>
             <Header />
